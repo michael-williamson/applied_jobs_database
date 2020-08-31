@@ -11,13 +11,14 @@ class TableMain extends Component {
     }  
 
     renderTable = () => {
-       return this.props.jobList.map((job)=>{
+       return this.props.jobList.map((job,index)=>{
             return (
-                <tr>
+                <tr key={index}>
                     <td>{job.company}</td>
                     <td>{job.city}</td>
                     <td>{job.state}</td>
                     <td>{job.typeOfDev}</td>
+                    <td>{job.date}</td>
                 </tr>
             );
         });
@@ -30,13 +31,14 @@ class TableMain extends Component {
                     {`I have applied for ${this.props.jobList.length} jobs`}
                 </h3>
                 <Link className="ui button blue" to="/form">Back to Form</Link>
-            <table class="ui celled table">
+            <table className="ui celled table">
             <thead>
                 <tr>
                     <th>Company</th>
                     <th>City</th>
                     <th>State</th>
                     <th>Type Of Development</th>
+                    <th>Date</th>
                 </tr>
             </thead>
             <tbody>
