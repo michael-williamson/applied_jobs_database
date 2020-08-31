@@ -29,7 +29,7 @@ class FormMain extends Component {
                 </div>
                 <div className="field">
                     <label>Type of Development:</label>
-                    <Field name="typeOfDevelopment" component="select">
+                    <Field name="typeOfDev" component="select">
                         <option/>
                         <option value="Front End Developer">Front End Devleoper</option>
                         <option value="React Developer">React Developer</option>

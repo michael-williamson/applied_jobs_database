@@ -1,11 +1,18 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const keys = require('./config/privateKeys');
 
 const bodyParser = require('body-parser');
+require('./models/User');
+require('./models/Job');
 
 const app = express(); 
 
 app.use(bodyParser.json());
+
+mongoose.connect(keys.devURI,{ useNewUrlParser: true });
+
+require('./routes/addJob')(app);
 
 
 if(process.env.NODE_ENV === 'production'){
