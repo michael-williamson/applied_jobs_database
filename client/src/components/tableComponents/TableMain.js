@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {connect} from 'react-redux';
 
 class TableMain extends Component {
     render() {
@@ -31,4 +32,10 @@ class TableMain extends Component {
     }
 }
 
-export default TableMain;
+const mapStateToProps = ({fetchJobs}) => {
+    return {
+        fetchJobs
+    }
+}
+
+export default connect(mapStateToProps)(TableMain);
