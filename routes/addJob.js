@@ -4,21 +4,23 @@ const Job = mongoose.model('job');
 
 module.exports = app => {
     app.post('/api/addJob',(req,res)=>{
-        console.log('is working');
+
         const name = "Mike";
 
         const {
             company,
             city,
             state,
-            typeOfDev
+            typeOfDev,
+            date
         } = req.body;
 
         const newJob = new Job({
             company,
             city,
             state,
-            typeOfDev
+            typeOfDev,
+            date
         });
 
         User.findOne({name:name})

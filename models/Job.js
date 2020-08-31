@@ -5,7 +5,8 @@ const jobSchema = new Schema({
     company: String,
     city:String,
     state: String,
-    typeOfDev:String
+    typeOfDev:String,
+    date:String
 });
 
 mongoose.model('job',jobSchema);
