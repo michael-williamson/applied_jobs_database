@@ -1,12 +1,18 @@
 import React, { Component } from 'react';
+import {connect} from 'react-redux';
 import {Field,reduxForm} from 'redux-form';
 //helper component
 import {ListOfStates} from './helperComponents/ListOfStates';
+//actions
+import {addJob} from '../../actions/index';
 
 class FormMain extends Component {
+
+    onSubmit = (formValues) =>  this.props.addJob(formValues);
+
     render() {
         return (
-            <form className="ui form">
+            <form className="ui form" onSubmit={this.props.handleSubmit(this.onSubmit)}>
                 <div className="field">
                     <label>Company:</label>
                     <Field name="company" component="input"/>
@@ -30,9 +36,10 @@ class FormMain extends Component {
                         <option value="Full Stack Developer">Full Stack Developer</option>
                     </Field>
                 </div>
+                <button className="ui button blue" type="submit">Submit</button>
             </form>
         );
     }
 }
 
-export default reduxForm({form:'jobForm'})(FormMain);
+export default connect(null,{addJob})(reduxForm({form:'jobForm'})(FormMain));
