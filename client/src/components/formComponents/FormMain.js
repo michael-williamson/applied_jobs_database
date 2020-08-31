@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
+import {Link} from 'react-router-dom';
 import {Field,reduxForm} from 'redux-form';
 //helper component
 import {ListOfStates} from './helperComponents/ListOfStates';
@@ -37,6 +38,7 @@ class FormMain extends Component {
                     </Field>
                 </div>
                 <button className="ui button blue" type="submit">Submit</button>
+                <Link to="/table" className="ui button green">To Table</Link>
             </form>
         );
     }

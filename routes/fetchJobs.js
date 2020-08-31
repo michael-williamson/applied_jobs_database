@@ -8,7 +8,6 @@ module.exports = app => {
         .then((user)=>{
             res.send(user.jobs)
         })
-        .catch(err=>console.log(err))
-        ;
+        .catch(err=>console.log(err));
     });
 }

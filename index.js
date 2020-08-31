@@ -13,6 +13,7 @@ app.use(bodyParser.json());
 mongoose.connect(keys.devURI,{ useNewUrlParser: true });
 
 require('./routes/addJob')(app);
+require('./routes/fetchJobs')(app);
 
 
 if(process.env.NODE_ENV === 'production'){
